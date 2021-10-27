@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<html lang="fr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link rel="stylesheet" href="css/calcul.css">
+		<link rel="stylesheet" href="css/style.css" />
+		
+		<title>calcul salaire</title>
+	</head>
+	<body>
+		<header>
+			<div class="contenair">
+					<div class="contenair-form" >
+						<div class="lead">Calculer et convertir votre salaire brut en salaire net</div>
+						
+							<form method="post" action="">
+								<table class=" pourcent100">
+									<thead>
+										<tr class="bordureBasGrise">
+											<th>Salaire</th>
+											<th>Brut</th>
+											<th>Net</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr class="bordureBasGrise">
+											<th>Annuel</th>
+											<td>
+												<div class="saisie">
+													<input type="tel" name="annuelBrut"  placeholder="0 €" id="annuelBrut"  class="input-calcul" />
+												</div>
+											</td>				
+											<td>
+												<div class="saisie">
+													<input type="tel" name="annuelNet" placeholder="0 €" id="annuelNet" class="input-calcul" />
+												</div>
+											</td>
+										</tr>
+											
+										<tr class="bordureBasGrise">
+											<th>Mensuel</th>
+											<td>
+												<div class="saisie">
+													<input type="tel" name="mensuelBrut" placeholder="0 €" id="mensuelBrut" class="chiffre input-calcul" />
+												</div>
+											</td>
+											<td>
+												<div class="saisie">
+													<input type="tel" name="mensuelNet" placeholder="0 €" id="mensuelNet" class="chiffre input-calcul" />
+												</div>
+											</td>
+										</tr>
+										
+										<tr class="bordureBasGrise">
+											<th>Journalier</th>
+											<td>
+												<div class="saisie">
+													<input type="tel" name="journalierBrut" placeholder="0 €" id="journalierBrut" class="chiffre input-calcul" />
+												</div>
+											</td>
+											<td>
+												<div class="saisie">
+													<input type="tel" name="journalierNet" placeholder="0 €" id="journalierNet" class="chiffre input-calcul" />
+												</div>
+											</td>
+										</tr>
+										
+										<tr class="bordureBasGrise">
+											<th>Horaires</th>
+											<td>
+												<div class="saisie">
+													<input type="tel" name="horaireBrut" placeholder="0 €" id="horaireBrut" class="chiffre input-calcul" />
+												</div>
+											</td>
+											<td>
+												<div class="saisie">
+													<input type="tel" name="horaireNet" placeholder="0 €" id="horaireNet" class="chiffre input-calcul" />
+												</div>
+											</td>
+										</tr>
+										<tr class="pourcent100  telAlignCente" >
+											<th>Options</th>
+											<th  colspan="3">
+												<div class="appliqueTauxTVA tauxDeTva" >
+													<input type="button" name="smic" value="Appliquer le SMIC" id="smic" class="input-calcul1"/>
+													<input type="button" name="tauxCharge" value="Taux %: 23" id="taux" class="input-calcul1"/>
+													<input type="button" name="douzemois" value="Mois: 12" id="mois" class="input-calcul1" />
+													<input type="button" name="heuresemaine" value="Heure: 35" id="heure" class="input-calcul1" />
+												</div>
+											</th>
+										</tr>
+										<tr class="textAlignCente pourcent100" >
+											<th>Status</th>
+											<th colspan="3">
+												<div class="appliqueTauxTVA tauxDeTva">
+													<div class="input-calcul2">
+														<label for="cadre">Cadre:</label>
+														<input type="checkbox" onclick="testCheckBox();" id="cadre" value="25">
+													</div>
+													<div class="input-calcul2">
+														<label for="fonc">Foncionnaire:</label>
+														<input type="checkbox" onclick="testCheckBox();" id="fonc" value="0.25"/>
+													</div>
+													<div class="input-calcul2">
+														<label for="portage">Portage:</label>
+														<input type="checkbox" onclick="testCheckBox();" id="portage" value="0.5"/>
+													</div>
+													<div class="input-calcul2">
+														<label for="indep">Indépendant/Sociéte:</label>
+														<input type="checkbox" onclick="testCheckBox();" id="indep" value="0.45"/>
+													</div>
+													<div class="input-calcul2">
+														<label for="entrep">Auto-Entrepreneur:</label>
+													<input type="checkbox" onclick="testCheckBox();" id="entrep" value="0.25"/>
+													</div>
+												</div>
+											</th>
+										</tr>
+									</tbody>
+								</table>
+							</form>
+						
+					</div>
+					<div class="message" style="text-align: center;">
+						<p>vous ganger un salaire mensuel net de <span style="font-weight: bold;" class="sn"></span> ce qui représente un salaire brut mensuel de <span style="font-weight: bold;" class= "sb"></span></p>
+						<p> si le taux de charge est dans la moyenne soit <span style="font-weight: bold;"  class="tc">~</span> % la différence entre le brut et le net sera de <span style="font-weight: bold;" class="deff"></span>€ chaque mois</p>
+					</div>
+					<div id="totalTva"><p class="messageIntro">Cliquez sur n'importe quel nombre pour calculer votre salaire.</p></div>
+					
+				
+			</div>
+		</header>
+		<script src="js/salaire.js"></script>
+
+</body>
+</html>
